@@ -2,6 +2,13 @@ This is a fork of the Github qtaim/aimpac repository. The original version of AI
 
 <http://www.chemistry.mcmaster.ca/aimpac/>
 
+WORK IN PROGRESS
+================
+
+If you have found this page, and this notice is still here, then please know that this *does not work yet*
+
+Please send an email to me and *motivate* me to get this finished.
+
 Disclaimer
 ==========
 
@@ -20,13 +27,13 @@ operating system.
 
 A second motivation is to remove the "fixed form" input required by
 the original source. The original code is very particular about how
-the input decks should be specified, and there is really no need for
-this.
+the input decks should be specified, and this is inconvenient for the
+user.
 
 Instructions
 ============
 
-0) *Please note: Windows is not UNIX!* If you are using a Windows
+0. *Please note: Windows is not UNIX!* If you are using a Windows
 system, then you are on your own.  If you insist on going forward, you
 may find it necessary to install a Linux virtual machine on your
 computer, and then continue along with these instructions.
@@ -67,5 +74,6 @@ Feedback
 Please send comments and suggestions to:
 
 Eric Brown
+
 <eric.c.brown@mac.com>
 
