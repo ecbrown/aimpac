@@ -17,13 +17,12 @@
 #COMPILER = gfortran_gcc_64
 #X11=/usr/lib/x86_64-linux-gnu/libX11.so
 
-# Debian 7.0 (wheezy, Intel Fortran) NOT CHECKED
+# Debian 7.0 (wheezy, Intel Fortran)
 FC = ifort
 FFLAGS = -check bounds -O2 -fPIC -m64
 OS = linux
 COMPILER = ifort_icc_64
-X11=/usr/X11/lib/libX11.dylib
-
+X11=/usr/lib/x86_64-linux-gnu/libX11.so
 
 all : contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
 
