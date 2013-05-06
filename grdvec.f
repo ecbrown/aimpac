@@ -21,6 +21,8 @@ C
       COMMON /TRANS/ A,CR,CX,CT,SCAL,IPROJ
       COMMON /UNITS/ ISRF,IVEC,IOUT,IWFN,IDBG
 C
+      PARAMETER (PI=4.D0*DATAN(1.D0))
+C
       CALL MAKNAME (1,WVEC,ILEN,FVEC)
       IF (ILEN .EQ. 0) STOP 'usage: grdvec vecfile wfnfile'
       CALL MAKNAME (1,WGVP,ILEN,FGVP)
@@ -157,8 +159,8 @@ C
 C    FIND STARTING POINT FOR EACH GRADIENT PATH
 C
             ANG = DFLOAT((J-1))*PATHA
-            X0 = X + R1*DCOSD(ANG)
-            Y0 = Y + R1*DSIND(ANG)
+            X0 = X + R1*DCOS((PI/180.D0)*ANG)
+            Y0 = Y + R1*DSIN((PI/180.D0)*ANG)
             Z0 = 0.0D0
             CALL TRUDGE(X0,Y0,Z0,0,IINC,ENDPT)
 200       CONTINUE
