@@ -6,12 +6,12 @@ OS = macosx
 COMPILER = gfortran_gcc_64
 X11=/usr/X11/lib/libX11.dylib
 
-# Debian 7.0 (wheezy) NOT TESTED
+# Debian 7.0 (wheezy)
 #OS = linux
 #COMPILER = gfortran_gcc_64
-#X11=/usr/lib/x86_64-linux-gnu/libX11.a
+#X11=/usr/lib/x86_64-linux-gnu/libX11.so
 
-all : pgplot bubble.x contor.x cubev.x ext94b.x grdvec.x profil.x proaimv.x
+all : bubble.x contor.x cubev.x ext94b.x grdvec.x profil.x proaimv.x
 
 broken : envelop.x relief.x schuss.x
 
@@ -40,7 +40,7 @@ envelop.x : envelop.f
 ext94b.x : ext94b.f
 	$(FC) $(FFLAGS) -o ext94b.x ext94b.f
 
-grdvec.x : pgplot grdvec.f hereplot.f
+grdvec.x : pgplot grdvecpg.f hereplot.f
 	$(FC) $(FFLAGS) -o grdvec.x hereplot.f grdvecpg.f -Lpgplot_build -lpgplot $(X11)
 
 proaimv.x : proaimv.f
