@@ -1,21 +1,29 @@
 # Mac OS X 10.8 (g95)
 #FC = g95 
-#FFLAGS = -freal-loops -fsloppy-char -O2 -fPIC -m32
+#FFLAGS = -fbounds-check -freal-loops -fsloppy-char -O2 -fPIC -m32
 #OS = macosx
 #COMPILER = g95_gcc_32
 #X11=/usr/X11/lib/libX11.dylib
 
 # Mac OS X 10.8 (gfortran)
-FC = gfortran
-FFLAGS = -O2 -fPIC -m64
-OS = macosx
-COMPILER = gfortran_gcc_64
-X11=/usr/X11/lib/libX11.dylib
+#FC = gfortran
+#FFLAGS = -fbounds-check -O2 -fPIC -m64
+#OS = macosx
+#COMPILER = gfortran_gcc_64
+#X11=/usr/X11/lib/libX11.dylib
 
 # Debian 7.0 (wheezy)
 #OS = linux
 #COMPILER = gfortran_gcc_64
 #X11=/usr/lib/x86_64-linux-gnu/libX11.so
+
+# Debian 7.0 (wheezy, Intel Fortran) NOT CHECKED
+FC = ifort
+FFLAGS = -check bounds -O2 -fPIC -m64
+OS = linux
+COMPILER = ifort_icc_64
+X11=/usr/X11/lib/libX11.dylib
+
 
 all : contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
 
