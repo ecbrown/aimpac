@@ -1,19 +1,25 @@
-FC = gfortran
-FFLAGS = -O2 -fPIC -m64
-
-# Mac OS X 10.8
+# Mac OS X 10.8 (g95)
+FC = g95 
+FFLAGS = -fsloppy-char -O2 -fPIC -m32
 OS = macosx
-COMPILER = gfortran_gcc_64
+COMPILER = g95_gcc_32
 X11=/usr/X11/lib/libX11.dylib
+
+# Mac OS X 10.8 (gfortran)
+#FC = g95
+#FFLAGS = -fsloppy-char -O2 -fPIC -m32
+#OS = macosx
+#COMPILER = gfortran_gcc_64
+#X11=/usr/X11/lib/libX11.dylib
 
 # Debian 7.0 (wheezy)
 #OS = linux
 #COMPILER = gfortran_gcc_64
 #X11=/usr/lib/x86_64-linux-gnu/libX11.so
 
-all : bubble.x contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
+all : contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
 
-broken : envelop.x relief.x schuss.x
+broken : bubble.x envelop.x relief.x schuss.x
 
 nopgplot : bubble.x cubev.x ext94b.x proaimv.x
 

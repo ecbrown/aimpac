@@ -18,7 +18,7 @@ C
       CHARACTER*7 LABEL
       CHARACTER*8  ATNAM
       CHARACTER*80 JOBTTL,WFNTTL,LINE
-      CHARACTER*4 FWFN /'.wfn'/, FOUT /'.bub'/,FINP /'.dbt'/
+      CHARACTER*4 FWN /'.wfn'/, FOUT /'.bub'/, FINP /'.dbt'/
       CHARACTER*40 WFN,WOUT,WINP
 C
       DIMENSION PN(4),WORK(9),EV(3),EU(3),DH(3,3),ISIG(30),VM(2)
