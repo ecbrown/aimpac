@@ -24,11 +24,11 @@ OS = linux
 COMPILER = ifort_icc_64
 X11=/usr/lib/x86_64-linux-gnu/libX11.so
 
-all : contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
+all : bubble.x contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
 
-broken : bubble.x envelop.x relief.x schuss.x
+broken :  envelop.x relief.x schuss.x
 
-nopgplot : bubble.x cubev.x ext94b.x proaimv.x
+nopgplot : bubble.x cubev.x ext94b.x gridv.x proaimv.x profil.x
 
 pgplot : pgplot_src
 	rm -rf pgplot_build ;\
