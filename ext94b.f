@@ -40,8 +40,10 @@ C
 C
       CHARACTER*8  ATNAM
       CHARACTER*80 JOBTTL,WFNTTL
-      CHARACTER*4 FWFN /'.wfn'/, FWLP /'.crt'/
-      CHARACTER*8 BLANK /'        '/
+      CHARACTER*4 FWFN, FWLP
+      PARAMETER(FWFN='.wfn', FWLP='.crt')
+      CHARACTER*8 BLANK
+      PARAMETER(BLANK='        ')
       CHARACTER*40 WFN,WLP
       Parameter(MaxAtm=100,MaxOff=200000,MaxCrt=500)
       COMMON CO(MaxOff),IC(MaxOff),NCENT,NMO,NPRIMS

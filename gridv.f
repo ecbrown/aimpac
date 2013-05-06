@@ -35,7 +35,8 @@ C
       CHARACTER*80 WFNTTL,LINE,JOBTTL
       CHARACTER*8 ATNAM,WORD
       CHARACTER*40 WINP,WOUT,WFN,WDBG
-      CHARACTER*4 FINP /'.inf'/, FOUT /'.grd'/, FWFN /'.wfn'/
+      CHARACTER*4 FINP, FOUT, FWFN
+      PARAMETER(FINP='.inf', FOUT='.grd', FWFN='.wfn')
       PARAMETER(MCENT=50,MMO=100,MPRIMS=400,MPTS=400)
       DIMENSION A(3,3),IR(MCENT),CX(3),E(3),CT(3)
       DIMENSION XS(3,MCENT),X(3,MCENT),XY(4)                          
@@ -79,13 +80,13 @@ C
 C     UNFORMATTED READ CODE IS DUE TO DR. SIMON K KEARSLEY
 C
       READ(INPT,1600) TITLE                                               
-C
+C     
 C    PLOT:   INPUT GRID EDGE SIZE (IN AU) AND INCREMENT.  THIS
 C    EFFECTIVELY DESCIBES THE COARSENESS OF THE GRID.  THE
 C    SAMPLING IS DONE AT (XY(1)/XY(2))**2) POINTS WITHIN
 C    THE PLANE
 C
-      READ (20,200) LINE                                                
+      READ (INPT,200) LINE                                                
       LPST = 8                                                          
       DO 100 I = 1,2                                                    
       IF (NUMBER(LINE,LPST,NUM,XY(I)) .GT. 0) GOTO 990                  
@@ -98,7 +99,7 @@ C
        GOTO 1010
       ENDIF
 C
-      READ (20,200) LINE                                                
+      READ (INPT,200) LINE                                                
       LPST = 8                                                          
       DO 110 I = 1,3                                                    
       IF (NUMBER(LINE,LPST,NUM,CX(I)) .GT. 0) GOTO 992                  
@@ -125,7 +126,7 @@ C    DESIRED, BUT IT IS RARELY NECESSARY...
 C    CODE FOR GENERATION OF INERTIAL AXIS IS DUE TO DR. SIMON K
 C    KEARSLEY
 C
-      READ (20,200) LINE                                                
+      READ (INPT,200) LINE                                                
       LPST = 8                                                          
       IF (NUMBER(LINE,LPST,IEG,DNUM) .GT. 0) GOTO 1100
       IF (IEG .EQ. 0) THEN
@@ -172,7 +173,7 @@ C
 C    READ IN DESIRED FUNCTION 
 C
       LPST = 8
-      READ (20,200) LINE
+      READ (INPT,200) LINE
       IF (NUMBER(LINE,LPST,IFUNC,DNUM) .GT. 0) GOTO 998
 C
 C

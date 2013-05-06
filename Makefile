@@ -1,16 +1,16 @@
 # Mac OS X 10.8 (g95)
-FC = g95 
-FFLAGS = -fsloppy-char -O2 -fPIC -m32
-OS = macosx
-COMPILER = g95_gcc_32
-X11=/usr/X11/lib/libX11.dylib
+#FC = g95 
+#FFLAGS = -freal-loops -fsloppy-char -O2 -fPIC -m32
+#OS = macosx
+#COMPILER = g95_gcc_32
+#X11=/usr/X11/lib/libX11.dylib
 
 # Mac OS X 10.8 (gfortran)
-#FC = g95
-#FFLAGS = -fsloppy-char -O2 -fPIC -m32
-#OS = macosx
-#COMPILER = gfortran_gcc_64
-#X11=/usr/X11/lib/libX11.dylib
+FC = gfortran
+FFLAGS = -O2 -fPIC -m64
+OS = macosx
+COMPILER = gfortran_gcc_64
+X11=/usr/X11/lib/libX11.dylib
 
 # Debian 7.0 (wheezy)
 #OS = linux
