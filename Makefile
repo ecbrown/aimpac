@@ -11,7 +11,7 @@ X11=/usr/X11/lib/libX11.dylib
 #COMPILER = gfortran_gcc_64
 #X11=/usr/lib/x86_64-linux-gnu/libX11.so
 
-all : bubble.x contor.x cubev.x ext94b.x grdvec.x profil.x proaimv.x
+all : bubble.x contor.x cubev.x ext94b.x gridv.x grdvec.x profil.x proaimv.x
 
 broken : envelop.x relief.x schuss.x
 
@@ -39,6 +39,9 @@ envelop.x : envelop.f
 
 ext94b.x : ext94b.f
 	$(FC) $(FFLAGS) -o ext94b.x ext94b.f
+
+gridv.x : gridv.f
+	$(FC) $(FFLAGS) -o gridv.x gridv.f
 
 grdvec.x : pgplot grdvecpg.f hereplot.f
 	$(FC) $(FFLAGS) -o grdvec.x hereplot.f grdvecpg.f -Lpgplot_build -lpgplot $(X11)
