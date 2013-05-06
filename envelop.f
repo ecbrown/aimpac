@@ -44,7 +44,8 @@ C
       CALL ISOSRF(T,50,IX,50,IY,IZ,EYE,52,SLAB,TISO,IFLAG)
 C
       CALL PLOT(0.,0.,999)
-      END      SUBROUTINE DRAWI (IXA,IYA,IXB,IYB)                                ISO02076
+      END
+      SUBROUTINE DRAWI (IXA,IYA,IXB,IYB)                                ISO02076
 C                                                                       ISO02077
 C INCLUDED FOR USE BY PWRZ                                              ISO02078
 C                                                                       ISO02079
